@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 
-namespace RepoPattern
+namespace RepoPattern.Models
 {
     public class WeatherForecast
     {

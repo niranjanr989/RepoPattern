@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RepoPattern.Repository;
+using RepoPattern.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,10 @@ namespace RepoPattern
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //Add dependencies
+            services.AddScoped<IWeatherForecastService, WeatherForecastService>();
+            services.AddScoped<IWeatherForecastRepository, WeatherForecastRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
